@@ -1,0 +1,11 @@
+:root {
+   --white: white;
+   --black: black;
+   --grey: grey;
+
+   --aside-background-1: rgba(0, 0, 0, 0.473);
+   --aside-background-2: rgba(0, 0, 0, 0.39);
+   --aside-background-3: rgba(0, 0, 0, 0.473);
+
+   --link-hover: #35dde9;
+}

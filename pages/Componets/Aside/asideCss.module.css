@@ -1,0 +1,27 @@
+.body {
+   width: 370px;
+   height: 600px;
+   margin: 100px 25px;
+   color: var(--white);
+   background: linear-gradient(
+      360deg,
+      var(--aside-background-1) 0%,
+      var(--aside-background-2) 48.44%,
+      var(--aside-background-3) 100%
+   );
+   border-radius: 20px;
+}
+
+.aside {
+   margin: 10px;
+}
+.link {
+   width: 200px;
+   margin: 10px 0px 0px auto;
+}
+
+.h2 {
+   text-align: center;
+   padding: 10px;
+   margin: 0px;
+}

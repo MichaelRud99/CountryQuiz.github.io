@@ -1,0 +1,6 @@
+.link {
+   transition-property: color, border-color;
+   transition-duration: 500ms;
+   transition-delay: 0s;
+   transition-timing-function: linear;
+}
