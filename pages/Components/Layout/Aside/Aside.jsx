@@ -1,5 +1,5 @@
 import asideCss from "./asideCss.module.css";
-import transition from "../../../styles/transition.module.css";
+import transition from "../../../../styles/transition.module.css";
 const Aside = () => {
    return (
       <div className={asideCss.body}>
@@ -24,7 +24,7 @@ const Aside = () => {
          </aside>
          <div className={asideCss.link}>
             <a
-               className={transition.link}
+               className={transition.colorBorder + " " + asideCss.a}
                href="http://www.gatchina.biz/generator"
             >
                Генератор светских бесед

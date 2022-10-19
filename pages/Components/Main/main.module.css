@@ -1,0 +1,49 @@
+.body {
+  width: 470px;
+  height: 200px;
+  border-radius: 20px;
+  background: linear-gradient(360deg, var(--aside-background-1) 0%, var(--aside-background-2) 48.44%, var(--aside-background-3) 100%);
+}
+
+.div {
+  height: 20%;
+  justify-content: space-around;
+  margin: 75px 0px;
+}
+
+.btn {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
+.passQuiz {
+  color: var(--white);
+  border-color: var(--btn-border);
+  background-color: var(--btn-passQuiz);
+  cursor: pointer;
+}
+
+.passQuiz:hover {
+  color: var(--white);
+  border-color: var(--btn-passQuiz-hover);
+  background-color: var(--btn-passQuiz-hover);
+  cursor: pointer;
+}
+
+.createQuiz {
+  color: var(--white);
+  border-color: var(--btn-border);
+  background-color: var(--btn-createQuiz);
+  cursor: pointer;
+}
+
+.createQuiz:hover {
+  color: var(--white);
+  border-color: var(--btn-createQuiz-hover);
+  background-color: var(--btn-createQuiz-hover);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.module.css.map */

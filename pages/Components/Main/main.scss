@@ -1,0 +1,57 @@
+@mixin wrapper($width, $height) {
+   width: $width;
+   height: $height;
+   border-radius: 20px;
+}
+
+@mixin button($color, $bColor, $backColor) {
+   color: $color;
+   border-color: $bColor;
+   background-color: $backColor;
+   cursor: pointer;
+}
+
+.body {
+   @include wrapper(470px, 200px);
+   background: linear-gradient(
+      360deg,
+      var(--aside-background-1) 0%,
+      var(--aside-background-2) 48.44%,
+      var(--aside-background-3) 100%
+   );
+}
+
+.div {
+   height: 20%;
+   justify-content: space-around;
+   margin: 75px 0px;
+}
+
+.btn {
+   @include wrapper(150px, 40px);
+   border: 1px solid transparent;
+}
+
+.passQuiz {
+   @include button(var(--white), var(--btn-border), var(--btn-passQuiz));
+}
+
+.passQuiz:hover {
+   @include button(
+      var(--white),
+      var(--btn-passQuiz-hover),
+      var(--btn-passQuiz-hover)
+   );
+}
+
+.createQuiz {
+   @include button(var(--white), var(--btn-border), var(--btn-createQuiz));
+}
+
+.createQuiz:hover {
+   @include button(
+      var(--white),
+      var(--btn-createQuiz-hover),
+      var(--btn-createQuiz-hover)
+   );
+}

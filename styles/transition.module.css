@@ -1,6 +1,22 @@
-.link {
-   transition-property: color, border-color;
-   transition-duration: 500ms;
-   transition-delay: 0s;
-   transition-timing-function: linear;
+.colorBorder {
+  transition-property: color, border-color;
+  transition-duration: 500ms;
+  transition-delay: 0s;
+  transition-timing-function: linear;
 }
+
+.color {
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+}
+
+.bacColorBorder {
+  transition-property: background-color, border-color;
+  transition-duration: 500ms;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+}
+
+/*# sourceMappingURL=transition.module.css.map */

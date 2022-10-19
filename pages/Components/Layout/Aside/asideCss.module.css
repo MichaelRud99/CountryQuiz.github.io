@@ -1,7 +1,7 @@
 .body {
    width: 370px;
    height: 600px;
-   margin: 100px 25px;
+   margin: auto 25px;
    color: var(--white);
    background: linear-gradient(
       360deg,
@@ -17,7 +17,11 @@
 }
 .link {
    width: 200px;
-   margin: 10px 0px 0px auto;
+   margin: 10px 10px 0px auto;
+}
+.a {
+   border-bottom: 2px solid transparent;
+   padding-bottom: 1px;
 }
 
 .h2 {

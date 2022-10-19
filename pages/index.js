@@ -1,17 +1,8 @@
-import Aside from "./Componets/Aside/Aside";
-import Main from "./Componets/Main";
-import indexCss from "../styles/index.module.css"
 
+import Main from "./Components/Main/Main";
 
 function index() {
-   return (
-      <>
-         <section className={indexCss.flex}>
-            <Aside />
-            <Main />
-         </section>
-      </>
-   );
+   return <Main />;
 }
 
 export default index;

@@ -1,0 +1,19 @@
+@mixin transition() {
+   transition-duration: 500ms;
+   transition-delay: 0s;
+   transition-timing-function: linear;
+}
+
+.colorBorder {
+   transition-property: color, border-color;
+   @include transition();
+}
+.color {
+   transition-property: color;
+   @include transition();
+}
+
+.bacColorBorder {
+   transition-property: background-color, border-color;
+   @include transition();
+}

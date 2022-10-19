@@ -1,0 +1,26 @@
+@font-face {
+   font-family: "Montserrat";
+   src: url(../../../../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+@mixin text($weight) {
+   font-family: "Montserrat";
+   font-size: 14px;
+   font-weight: $weight;
+   line-height: 17.07px;
+   text-align: center;
+   color: var(--footer-text);
+}
+
+.p {
+   @include text(500);
+}
+.a {
+   @include text(700);
+   text-decoration: underline;
+}
+.body {
+   height: 40px;
+   justify-content: center;
+   gap: 5px;
+}
