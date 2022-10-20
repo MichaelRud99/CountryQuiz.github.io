@@ -8,12 +8,23 @@
    transition-property: color, border-color;
    @include transition();
 }
+
 .color {
    transition-property: color;
    @include transition();
 }
 
-.bacColorBorder {
-   transition-property: background-color, border-color;
+.bacColor {
+   transition-property: background-color;
+   @include transition();
+}
+
+.colorBorder {
+   transition-property: color, border-color;
+   @include transition();
+}
+
+.bacColorColor {
+   transition-property: background-color,border-color, color;
    @include transition();
 }

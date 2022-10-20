@@ -17,4 +17,9 @@
 
    --btn-createQuiz: #491d29;
    --btn-createQuiz-hover: #582331;
+
+   --quiz-question: #2f527b;
+   --quiz-chosue-color: #6066d0cc;
+   --quiz-chouse-border:#6066D0B2;
+   --quiz-chouse-back: #f9a826;
 }
