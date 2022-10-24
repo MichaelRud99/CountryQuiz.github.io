@@ -27,7 +27,7 @@
 }
 
 .bacColorColor {
-  transition-property: background-color, color;
+  transition-property: background-color, border-color, color;
   transition-duration: 500ms;
   transition-delay: 0s;
   transition-timing-function: linear;

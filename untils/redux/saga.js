@@ -7,8 +7,6 @@ export function* read(region) {
       requestStorageComposition,
       "https://restcountries.com/v3.1/region/" + region.payload
    );
-   console.log(data);
-   console.log("https://restcountries.com/v3.1/region/" + region.payload);
    yield put(writeData(data));
 }
 

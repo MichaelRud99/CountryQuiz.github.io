@@ -2,17 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const interfaceSlice = createSlice({
    name: "interfaceActions",
-   initialState: { open: true },
+   initialState: { loading: false },
    reducers: {
-      openFalse: (state) => {
-         state.open = false;
+      loading: (state,bool) => {
+         state.loading = bool.payload;
       },
-      openTrue: (state) => {
-         state.open = true;
-      },
+
    },
 });
 
-export const { openTrue, openFals } = interfaceSlice.actions;
+export const { loading } = interfaceSlice.actions;
 
 export default interfaceSlice.reducer;

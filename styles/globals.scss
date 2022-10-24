@@ -13,10 +13,6 @@
    padding: 0px;
 }
 
-* {
-   box-sizing: border-box;
-}
-
 html,
 body,
 #__next {
@@ -24,6 +20,12 @@ body,
    height: 100%;
    padding: 0;
    margin: 0;
+}
+
+#__next{
+   display:grid;
+   grid-template-rows: auto 1fr auto;
+
 }
 
 body {
@@ -39,9 +41,7 @@ body {
 }
 
 main {
-   @include marginPaddinZero();
-   height: 200px;
-   margin: auto 0px auto 250px;
+   margin: auto;
 }
 
 h1 {
@@ -62,4 +62,9 @@ a:hover {
 p {
    color: var(--white);
    @include marginPaddinZero();
+}
+
+img {
+   width: 50px;
+   height: 50px;
 }

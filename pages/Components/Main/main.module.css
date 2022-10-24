@@ -5,6 +5,11 @@
   background: linear-gradient(360deg, var(--aside-background-1) 0%, var(--aside-background-2) 48.44%, var(--aside-background-3) 100%);
 }
 
+.title {
+  margin: 0%;
+  padding-top: 25px;
+}
+
 .div {
   height: 20%;
   justify-content: space-around;

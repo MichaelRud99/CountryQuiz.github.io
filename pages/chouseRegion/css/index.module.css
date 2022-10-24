@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(../../../public/fonts/Poppins/Poppins-SemiBold.ttf);
+}
+.body {
+  width: 464px;
+  height: 550px;
+  border-radius: 24px;
+  background-color: var(--white);
+  position: relative;
+  top: -75px;
+}
+
+.title {
+  width: 300px;
+  height: 50px;
+  margin: 0px;
+  margin-bottom: 10px;
+  position: relative;
+  top: 30px;
+  font-family: "Poppins";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 54px;
+}
+
+.img {
+  background-image: url(../../../public/undraw_adventure_4hum\ 1.svg);
+  width: 162px;
+  height: 116px;
+  position: relative;
+  top: -30px;
+  left: 302px;
+  z-index: 1;
+}
+
+.chouseRegion {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  position: static;
+  color: var(--quiz-question);
+  margin: 50px 0px 5px 32px;
+}
+
+.question {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  position: static;
+  color: var(--quiz-question);
+  margin: 10px 0px 5px 32px;
+}
+
+.chouse {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  width: 400px;
+  height: 56px;
+  margin: 0% auto 0% auto;
+  padding: 15px 0px;
+  text-align: center;
+  border: 2px solid var(--quiz-chouse-border);
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0%;
+  display: flex;
+}
+
+.chouse:hover {
+  background-color: var(--quiz-chouse-back);
+  border-color: transparent;
+}
+
+.btn {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 15px;
+  width: 100px;
+  height: 30px;
+  margin: 5px auto 0px auto;
+  border: 2px solid var(--quiz-chouse-border);
+  border-radius: 12px;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--grey);
+  background-color: var(--quiz-chouse-back);
+  border-color: transparent;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 70px;
+  height: 70px;
+}
+.spinner .path {
+  stroke: var(--loading);
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+.flag {
+  width: 84px;
+  height: 54px;
+  margin-top: 30px;
+  margin-left: 32px;
+}
+
+.variableAnswer {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--quiz-chosue-color);
+  padding-left: 10px;
+  /* height: 30px; */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.answer {
+  color: var(--quiz-chosue-color);
+  height: 30px;
+  margin: auto;
+}
+
+/*# sourceMappingURL=index.module.css.map */
