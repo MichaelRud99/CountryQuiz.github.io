@@ -83,7 +83,6 @@
   line-height: 15px;
   width: 100px;
   height: 30px;
-  margin: 5px auto 0px auto;
   border: 2px solid var(--quiz-chouse-border);
   border-radius: 12px;
   background-color: var(--white);
@@ -98,8 +97,14 @@
 
 .flex {
   display: flex;
-  flex-direction: column;
   gap: 15px;
+  flex-direction: column;
+}
+
+.flexBtn {
+  display: flex;
+  gap: 60px;
+  margin: 5px auto 0px auto;
 }
 
 .spinner {

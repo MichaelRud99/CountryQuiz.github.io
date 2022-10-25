@@ -10,6 +10,11 @@
    line-height: $lHeight;
 }
 
+@mixin flex($size) {
+   display: flex;
+   gap: $size;
+}
+
 .body {
    width: 464px;
    height: 550px;
@@ -74,7 +79,6 @@
    @include font(30px, 15px);
    width: 100px;
    height: 30px;
-   margin: 5px auto 0px auto;
    border: 2px solid var(--quiz-chouse-border);
    border-radius: 12px;
    background-color: var(--white);
@@ -87,9 +91,13 @@
 }
 
 .flex {
-   display: flex;
+   @include flex(15px);
    flex-direction: column;
-   gap: 15px;
+}
+
+.flexBtn {
+   @include flex(60px);
+   margin: 5px auto 0px auto;
 }
 
 .spinner {

@@ -12,27 +12,29 @@ import { quizSelector, interfaceSelector } from "../../untils/selectors";
 import sampleQuiz from "../../untils/createSampleQuiz/sampleQuiz";
 import { interfaceSlice } from "../../untils/redux/slice/interfaceSlice";
 
-const Quiz = () => {
+const Index = () => {
    const slice = useActions(quizSlice.actions);
    const sliceInterface = useActions(interfaceSlice.actions);
    const quiz = useSelector(quizSelector);
    const interfaceSelect = useSelector(interfaceSelector);
 
-   const question = [];
+   const question = [],
+      questions = [];
 
    useEffect(() => {
       if (quiz.data.length > 0) {
          for (let i = 0; i < 10; i++) {
-            const tmp = question;
+            const tmp = questions;
             question = sampleQuiz(quiz.data);
-            question = tmp.concat(question);
+            questions = question;
+            questions = tmp.concat(question);
+            slice.writeQuestion(question);
          }
-         slice.writeQuestion(question);
       }
    }, [quiz.data.length]);
 
    const load = () => {
-      Router.push("/chouseRegion/Quiz");
+      Router.push("/chouseRegion/1");
    };
 
    const chouseRegion = (region) => {
@@ -40,27 +42,27 @@ const Quiz = () => {
          case "Americas":
             slice.readData("Americas");
             sliceInterface.loading(true);
-            setTimeout(load, 900);
+            setTimeout(load, 600);
             break;
          case "Africa":
             slice.readData("Africa");
             sliceInterface.loading(true);
-            setTimeout(load, 900);
+            setTimeout(load, 600);
             break;
          case "Asia":
             slice.readData("Asia");
             sliceInterface.loading(true);
-            setTimeout(load, 900);
+            setTimeout(load, 600);
             break;
          case "Europe":
             slice.readData("Europe");
             sliceInterface.loading(true);
-            setTimeout(load, 900);
+            setTimeout(load, 600);
             break;
          case "Oceania":
             slice.readData("Oceania");
             sliceInterface.loading(true);
-            setTimeout(load, 900);
+            setTimeout(load, 600);
             break;
       }
    };
@@ -117,7 +119,13 @@ const Quiz = () => {
                   </div>
                   <input
                      type="button"
-                     className={index.btn + " " + transition.bacColorColor}
+                     className={
+                        index.btn +
+                        " " +
+                        transition.bacColorColor +
+                        " " +
+                        index.flexBtn
+                     }
                      value="<<"
                      onClick={() => Router.push("/")}
                   />
@@ -139,4 +147,4 @@ const Quiz = () => {
    );
 };
 
-export default Quiz;
+export default Index;
