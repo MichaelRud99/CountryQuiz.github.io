@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { interfaceSelector } from "../../untils/selectors";
 import { useEffect } from "react";
 import { useActions } from "../hooks/useAction";
-import {quizSlice} from "../../untils/redux/slice/quizSlice";
+import { quizSlice } from "../../untils/redux/slice/quizSlice";
 import { quizSelector } from "../../untils/selectors";
 import sampleQuiz from "../../untils/createSampleQuiz/sampleQuiz";
 
@@ -16,7 +16,7 @@ const Index = () => {
    const slice = useActions(quizSlice.actions);
    const quiz = useSelector(quizSelector);
    const question = [],
-   questions = [];
+      questions = [];
 
    useEffect(() => {
       if (quiz.data.length > 0) {

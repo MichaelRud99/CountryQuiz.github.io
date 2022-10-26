@@ -1,4 +1,5 @@
 import rndSample from "./rndSample";
+import enumeration from "./enumeration";
 
 const sampleQuiz = (regionArr) => {
    const question = [];
@@ -7,11 +8,12 @@ const sampleQuiz = (regionArr) => {
    question = rndSample(regionArr, 1);
    variableAnswer = rndSample(regionArr, 3);
    const questionFlag = question[0].flags.png;
-   const questionCountry = question[0].name.common;
-   const variableAnswerCountry = variableAnswer.map((name) => name.name.common);
-   variableAnswerCountry.push(questionCountry);
+   const answer = question[0].name.common;
 
-   question = {flag:questionFlag,variableAnswer:variableAnswerCountry}
+   const answers = variableAnswer.map((name) => name.name.common);
+   answers.push(answer);
+   let Vanswers = enumeration([answers[0], answers[1], answers[2], answers[3]]);
+   question = { flag: questionFlag, variableAnswer: Vanswers, answer: answer };
    quizArr.push(question);
 
    return quizArr;

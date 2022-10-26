@@ -10,27 +10,16 @@ import { useActions } from "../hooks/useAction";
 import { interfaceSlice } from "../../untils/redux/slice/interfaceSlice";
 import { quizSlice } from "../../untils/redux/slice/quizSlice.js";
 
+import VariableAnswers from "../Components/VariableAnswers.jsx";
+
 const Id = ({ question, ctx }) => {
    ctx = ctx * 1;
-   const questionArr = question.variableAnswer.split(",");
+   const answers = question.variableAnswer.split(",");
    const slice = useActions(interfaceSlice.actions);
    const sliceQuiz = useActions(quizSlice.actions);
-   const [va, setVa] = useState(false);
    useEffect(() => {
-      setVa(true);
       slice.loading(false);
    }, []);
-
-   if (!va) {
-      let variableAnswer = enumeration([
-         questionArr[0],
-         questionArr[1],
-         questionArr[2],
-         questionArr[3],
-      ]);
-      console.log("NEW", variableAnswer);
-      console.log("BASE", questionArr);
-   }
 
    const backToChouse = () => {
       Router.push("/");
@@ -41,6 +30,17 @@ const Id = ({ question, ctx }) => {
       ctx++;
       Router.push("/chouseRegion/" + ctx);
    };
+
+   const [validTrue, setValidTrue] = useState("initial");
+   const [validFalse, setValidFalse] = useState(["true", -1]);
+   console.log(validFalse,validTrue)
+
+   useEffect(() => {
+      if (validTrue != "initial") {
+         const i = validTrue;
+         setValidFalse(["false", i]);
+      }
+   }, [validTrue]);
 
    return (
       <>
@@ -60,23 +60,46 @@ const Id = ({ question, ctx }) => {
                   Which country does this flag belong to?
                </p>
                <div className={index.flex}>
-                  <div className={index.chouse + " " + transition.bacColor}>
-                     <p className={index.variableAnswer}>A</p>
-                     <p className={index.answer}>{questionArr[0]}</p>
-                  </div>
-
-                  <div className={index.chouse + " " + transition.bacColor}>
-                     <p className={index.variableAnswer}>B</p>
-                     <p className={index.answer}>{questionArr[1]}</p>
-                  </div>
-                  <div className={index.chouse + " " + transition.bacColor}>
-                     <p className={index.variableAnswer}>C</p>
-                     <p className={index.answer}>{questionArr[2]}</p>
-                  </div>
-                  <div className={index.chouse + " " + transition.bacColor}>
-                     <p className={index.variableAnswer}>D</p>
-                     <p className={index.answer}>{questionArr[3]}</p>
-                  </div>
+                  <VariableAnswers
+                     ABC={"A"}
+                     answers={answers[0]}
+                     answer={question.answer}
+                     setValidTrue={setValidTrue}
+                     validTrue={validTrue}
+                     validFalse={validFalse}
+                     checkAnswer={() => checkAnswer()}
+                     i={0}
+                  />
+                  <VariableAnswers
+                     ABC={"B"}
+                     answers={answers[1]}
+                     answer={question.answer}
+                     setValidTrue={setValidTrue}
+                     validTrue={validTrue}
+                     validFalse={validFalse}
+                     checkAnswer={() => checkAnswer()}
+                     i={1}
+                  />
+                  <VariableAnswers
+                     ABC={"C"}
+                     answers={answers[2]}
+                     answer={question.answer}
+                     setValidTrue={setValidTrue}
+                     validTrue={validTrue}
+                     validFalse={validFalse}
+                     checkAnswer={() => checkAnswer()}
+                     i={2}
+                  />
+                  <VariableAnswers
+                     ABC={"D"}
+                     answers={answers[3]}
+                     answer={question.answer}
+                     setValidTrue={setValidTrue}
+                     validTrue={validTrue}
+                     validFalse={validFalse}
+                     checkAnswer={() => checkAnswer()}
+                     i={3}
+                  />
                </div>
                <div className={index.flexBtn}>
                   <input

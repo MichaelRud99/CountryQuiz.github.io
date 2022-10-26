@@ -57,6 +57,7 @@
    color: var(--quiz-question);
    margin: 10px 0px 5px 32px;
 }
+.chouseFake,
 .chouse {
    @include font(18px, 27px);
    width: 400px;
@@ -148,7 +149,6 @@
    @include font(24px, 36px);
    color: var(--quiz-chosue-color);
    padding-left: 10px;
-   /* height: 30px; */
    margin-top: auto;
    margin-bottom: auto;
 }
@@ -157,4 +157,20 @@
    color: var(--quiz-chosue-color);
    height: 30px;
    margin: auto;
+}
+
+.answerResult {
+   color: var(--white);
+}
+
+.trueAnswer {
+   background-color: var(--answer-true);
+   border: 0px solid transparent;
+   cursor:auto;
+}
+
+.falseAnswer {
+   background-color: var(--answer-false);
+   border: 0px solid transparent;
+   cursor:auto;
 }

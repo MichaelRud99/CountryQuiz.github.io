@@ -1,13 +1,15 @@
 const rndSample = (regionArr, iteration) => {
    let sampleQuiz = [];
-   let previoustRnd = -1;
-   const max = regionArr.length;
+   const max = regionArr.length-1;
+   const rndInt = Math.floor(Math.random() * max);
+
    for (let i = 0; i < iteration; i++) {
-      const rndInt = Math.floor(Math.random() * max);
-      if (rndInt === previoustRnd) {
-         rndInt = Math.floor((Math.random() * max) / 2);
+      if (rndInt === max) {
+         rndInt = i;
       }
-      previoustRnd = rndInt;
+      if (rndInt != max) {
+         rndInt = rndInt + 1;
+      }
       sampleQuiz.push(regionArr[rndInt]);
    }
    return sampleQuiz;
