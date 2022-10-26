@@ -13,7 +13,7 @@ function requests(data, method, id) {
    }
    urlEncodedData = urlEncodedDataPairs.join("&").replace(/%20/g, "+");
    if (id === undefined) {
-      XHR.open(method, "http://localhost:4200/questions", false);
+      XHR.open(method, "http://localhost:4200/questions",false);
    } else {
       XHR.open(method, "http://localhost:4200/questions/" + id);
    }

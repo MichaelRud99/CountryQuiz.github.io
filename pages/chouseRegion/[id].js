@@ -8,11 +8,13 @@ import transition from "../../styles/transition.module.css";
 
 import { useActions } from "../hooks/useAction";
 import { interfaceSlice } from "../../untils/redux/slice/interfaceSlice";
+import { quizSlice } from "../../untils/redux/slice/quizSlice.js";
 
 const Id = ({ question, ctx }) => {
    ctx = ctx * 1;
    const questionArr = question.variableAnswer.split(",");
    const slice = useActions(interfaceSlice.actions);
+   const sliceQuiz = useActions(quizSlice.actions);
    const [va, setVa] = useState(false);
    useEffect(() => {
       setVa(true);
@@ -30,10 +32,9 @@ const Id = ({ question, ctx }) => {
       console.log("BASE", questionArr);
    }
 
-   console.log(Math.round(ctx));
-
    const backToChouse = () => {
       Router.push("/");
+      sliceQuiz.deleteQuestion();
    };
 
    const nextQuestion = () => {
@@ -96,7 +97,7 @@ const Id = ({ question, ctx }) => {
                         type="button"
                         className={index.btn + " " + transition.bacColorColor}
                         value="end"
-                        onClick={() => nextQuestion()}
+                        onClick={() => Router.push("/chouseRegion/Result")}
                      />
                   )}
                </div>
