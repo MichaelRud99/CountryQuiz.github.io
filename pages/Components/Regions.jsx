@@ -10,7 +10,7 @@ const Regions = ({ region }) => {
    const slice = useActions(quizSlice.actions);
    const sliceInterface = useActions(interfaceSlice.actions);
    const load = () => {
-      Router.push("/chouseRegion/1");
+      Router.push("/Quiz/1");
    };
 
    const chouseRegion = (region) => {

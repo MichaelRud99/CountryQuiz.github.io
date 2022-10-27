@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import Router from "next/router";
-import enumeration from "../../untils/createSampleQuiz/enumeration.js";
 import Layout from "../Components/Layout/Layout";
 import Image from "next/image";
-import index from "./css/index.module.css";
+import index from "../chouseRegion/css/index.module.css";
 import transition from "../../styles/transition.module.css";
 
 import { useActions } from "../hooks/useAction";
@@ -44,7 +43,7 @@ const Id = ({ question, ctx }) => {
       setValid(true);
       setValidFalse(true);
       setValidTrue(true);
-      Router.push("/chouseRegion/" + ctx);
+      Router.push("/Quiz/" + ctx);
    };
 
    return (
@@ -133,9 +132,15 @@ const Id = ({ question, ctx }) => {
                   ) : (
                      <input
                         type="button"
-                        className={index.btn + " " + transition.bacColorColor}
-                        value="end"
-                        onClick={() => Router.push("/chouseRegion/Result")}
+                        className={
+                           (ctx === 10 && index.btnEnd) +
+                           " " +
+                           index.btn +
+                           " " +
+                           transition.bacColorColor
+                        }
+                        value="Results"
+                        onClick={() => Router.push("/Quiz/Results")}
                      />
                   )}
                </div>

@@ -172,3 +172,60 @@
    background-color: var(--answer-false);
    border: 0px solid transparent;
 }
+
+.btnEnd {
+   @include font(18px, 27x);
+   color: var(--white);
+   background-color: var(--quiz-chouse-back);
+}
+
+.btnEnd:hover {
+   border: 0px solid transparent;
+}
+
+.resultsImg {
+   background-image: url(../../../public/undraw_winners_ao2o\ 2.svg);
+   width: 236px;
+   height: 140px;
+   margin: 50px auto 0px auto;
+}
+
+.results {
+   @include font(48px, 72px);
+   color: var(--results);
+   text-align: center;
+}
+
+.congratulation {
+   @include flex(5px);
+   margin: 0px auto;
+}
+
+.congratulationText {
+   @include font(18px, 27px);
+   font-weight: 400;
+   color: var(--results);
+   height: 21px;
+   margin: auto;
+}
+
+.total {
+   @include font(36px, 54px);
+   color: var(--totalCount);
+}
+
+.btnResults {
+   @include font(18px, 27px);
+   color: var(--results);
+   width: 209px;
+   height: 62px;
+   margin: 72px auto 0px auto;
+   border: 2px solid var(--results);
+   border-radius: 12px;
+   background-color: transparent;
+}
+
+.btnResults:hover {
+   background-color: var(--btnResultsBac);
+   color: var(--btnResultsColor);
+}
