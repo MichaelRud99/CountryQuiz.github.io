@@ -1,15 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import sampleQuiz from "../../untils/createSampleQuiz/sampleQuiz";
 import Layout from "../Components/Layout/Layout";
+import Regions from "../Components/Regions";
 import index from "./css/index.module.css";
 import transition from "../../styles/transition.module.css";
-import Regions from "../Components/Regions";
+import Router from "next/router";
 import { useSelector } from "react-redux";
 import { interfaceSelector } from "../../untils/selectors";
 import { useEffect } from "react";
 import { useActions } from "../hooks/useAction";
 import { quizSlice } from "../../untils/redux/slice/quizSlice";
 import { quizSelector } from "../../untils/selectors";
-import sampleQuiz from "../../untils/createSampleQuiz/sampleQuiz";
 
 const Index = () => {
    const interfaceSelect = useSelector(interfaceSelector);

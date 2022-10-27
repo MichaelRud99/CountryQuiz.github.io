@@ -1,35 +1,47 @@
 import index from "../chouseRegion/css/index.module.css";
 import transition from "../../styles/transition.module.css";
+import { useActions } from "../hooks/useAction";
+import {quizSlice} from "../../untils/redux/slice/quizSlice";
 
 const VariableAnswers = ({
    ABC,
    answers,
    answer,
+   valid,
+   setValid,
    validTrue,
    setValidTrue,
    validFalse,
    i,
 }) => {
+   const slice = useActions(quizSlice.actions);
+
    const checkAnswer = (answers, answer, i) => {
-      if (answers === answer) {
-         setValidTrue("true");
-      } else {
-         setValidTrue(i);
+      if (valid) {
+         if (answers === answer) {
+            slice.countAnswer();
+            setValidTrue([true, i]);
+         } else {
+            setValidTrue([false, i]);
+         }
       }
+      setValid(false);
    };
 
    return (
       <div
          className={
-            (validFalse[0] === "false" &&
+            (valid === true ? index.chouse : index.chouseFake) +
+            " " +
+            (validFalse[0] === false &&
                answers === answer &&
                index.trueAnswer) +
             " " +
-            (validFalse[0] === "false" &&
+            (validTrue[0] === true && validTrue[1] === i && index.trueAnswer) +
+            " " +
+            (validFalse[0] === false &&
                validFalse[1] === i &&
                index.falseAnswer) +
-            " " +
-            (validTrue === "" ? index.chouse : index.chouseFake) +
             " " +
             transition.bacColor
          }
@@ -37,8 +49,12 @@ const VariableAnswers = ({
       >
          <p
             className={
-               (validTrue === "true" &&
-                  answer === answers &&
+               (validFalse[0] === false &&
+                  answers === answer &&
+                  index.answerResult) +
+               " " +
+               (validTrue[0] === false &&
+                  validFalse[1] === i &&
                   index.answerResult) +
                " " +
                index.variableAnswer
@@ -48,8 +64,12 @@ const VariableAnswers = ({
          </p>
          <p
             className={
-               (validTrue === "true" &&
-                  answer === answers &&
+               (validFalse[0] === false &&
+                  answers === answer &&
+                  index.answerResult) +
+               " " +
+               (validTrue[0] === false &&
+                  validTrue[1] === i &&
                   index.answerResult) +
                " " +
                index.answer

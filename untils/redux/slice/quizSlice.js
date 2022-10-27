@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const quizSlice = createSlice({
    name: "quiz",
-   initialState: { data: [], question: [] },
+   initialState: { data: [], question: [], count: 0 },
    reducers: {
       readData: (state, country) => {
          state.country = country.payload;
@@ -18,11 +18,20 @@ export const quizSlice = createSlice({
          state.fail = !state.fail;
       },
 
-      deleteQuestion:()=>{}
+      deleteQuestion: () => {},
+      countAnswer: (state) => {
+         state.count = state.count + 1;
+      },
    },
 });
 
-export const { readData, writeData, writeQuestion, requestFail,deleteQuestion } =
-   quizSlice.actions;
+export const {
+   readData,
+   writeData,
+   writeQuestion,
+   requestFail,
+   deleteQuestion,
+   countAnswer,
+} = quizSlice.actions;
 
 export default quizSlice.reducer;

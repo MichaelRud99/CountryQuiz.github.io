@@ -14,9 +14,22 @@ import VariableAnswers from "../Components/VariableAnswers.jsx";
 
 const Id = ({ question, ctx }) => {
    ctx = ctx * 1;
+
+   const [valid, setValid] = useState(true);
+   const [validTrue, setValidTrue] = useState(true);
+   const [validFalse, setValidFalse] = useState([true, -1]);
+
    const answers = question.variableAnswer.split(",");
    const slice = useActions(interfaceSlice.actions);
    const sliceQuiz = useActions(quizSlice.actions);
+
+   useEffect(() => {
+      if (validTrue != true) {
+         const i = validTrue;
+         setValidFalse(i);
+      }
+   }, [validTrue]);
+
    useEffect(() => {
       slice.loading(false);
    }, []);
@@ -28,19 +41,11 @@ const Id = ({ question, ctx }) => {
 
    const nextQuestion = () => {
       ctx++;
+      setValid(true);
+      setValidFalse(true);
+      setValidTrue(true);
       Router.push("/chouseRegion/" + ctx);
    };
-
-   const [validTrue, setValidTrue] = useState("initial");
-   const [validFalse, setValidFalse] = useState(["true", -1]);
-   console.log(validFalse,validTrue)
-
-   useEffect(() => {
-      if (validTrue != "initial") {
-         const i = validTrue;
-         setValidFalse(["false", i]);
-      }
-   }, [validTrue]);
 
    return (
       <>
@@ -64,41 +69,51 @@ const Id = ({ question, ctx }) => {
                      ABC={"A"}
                      answers={answers[0]}
                      answer={question.answer}
-                     setValidTrue={setValidTrue}
+                     valid={valid}
+                     setValid={setValid}
                      validTrue={validTrue}
+                     setValidTrue={setValidTrue}
                      validFalse={validFalse}
                      checkAnswer={() => checkAnswer()}
                      i={0}
                   />
+
                   <VariableAnswers
                      ABC={"B"}
                      answers={answers[1]}
                      answer={question.answer}
-                     setValidTrue={setValidTrue}
+                     valid={valid}
+                     setValid={setValid}
                      validTrue={validTrue}
+                     setValidTrue={setValidTrue}
                      validFalse={validFalse}
                      checkAnswer={() => checkAnswer()}
-                     i={1}
+                     i={2}
                   />
+                  {/* Пропускаем i=1 из-за ошибки */}
                   <VariableAnswers
                      ABC={"C"}
                      answers={answers[2]}
                      answer={question.answer}
-                     setValidTrue={setValidTrue}
+                     valid={valid}
+                     setValid={setValid}
                      validTrue={validTrue}
+                     setValidTrue={setValidTrue}
                      validFalse={validFalse}
                      checkAnswer={() => checkAnswer()}
-                     i={2}
+                     i={3}
                   />
                   <VariableAnswers
                      ABC={"D"}
                      answers={answers[3]}
                      answer={question.answer}
-                     setValidTrue={setValidTrue}
+                     valid={valid}
+                     setValid={setValid}
                      validTrue={validTrue}
+                     setValidTrue={setValidTrue}
                      validFalse={validFalse}
                      checkAnswer={() => checkAnswer()}
-                     i={3}
+                     i={4}
                   />
                </div>
                <div className={index.flexBtn}>
