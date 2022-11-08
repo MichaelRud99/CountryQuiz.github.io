@@ -27,7 +27,7 @@ export function* deleteQuestionGenerator() {
       "http://localhost:4200/questions/"
    );
    for (let i = 0; i < 10; i++) {
-      yield requestDelete(data[i].id,false);
+      yield requestDelete(data[i].id, false);
    }
 }
 
