@@ -12,24 +12,24 @@
 
 ![screenshot](./public/StartedWindow.png)
 
-Стартовая страница CountryQuiz
+CountryQuiz Home Page
 
 ### Built With
 
-Проект собран на Фреймворке для создания пользовательского интерфейса Next.js
+The project is built on a framework for creating a user interface Next.js
 -  react-redux
 -  redux-saga
 -  sass
 
 ## How To Use
 
-Для корректного использования нужно установить следующие зависимости:
+For correct use, you need to install the following dependencies:
 1. npm install (install node.js)
 2. npm install redux
 3. npm install @reduxjs/toolkit
 4. npm install redux-saga
 5. npm install -g sass
-6. npm install -g json-server (библиотека для локального сервера "full fake REST API")
+6. npm install -g json-server (library for the local server "full fake REST API")
 
 ## Acknowledgements
 
