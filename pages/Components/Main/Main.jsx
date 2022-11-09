@@ -12,7 +12,7 @@ const Main = () => {
             <h1 className={main.title}>COUNTRY QUIZ</h1>
 
             <div className={indexCss.flex + " " + main.div}>
-               <input
+               {/*                <input
                   onClick={() => actions.openFalse()}
                   className={
                      main.btn +
@@ -23,7 +23,7 @@ const Main = () => {
                   }
                   type="button"
                   value="Создать квиз"
-               />
+               /> */}
                <input
                   onClick={() => Router.push("/chouseRegion")}
                   className={
